@@ -1,0 +1,51 @@
+{
+  "cli": {
+    "version": ">= 16.14.1",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "API_BASE_URL": "https://api.fabtrakr.com",
+        "AUTH0_CLIENT_ID": "j4jY7eXPLnSi6Ndt2sAGNUiUy0X4vocE",
+        "AUTH0_CLIENT_SECRET": "UOL5-fDLRjhpUICId3Jefvc-EVB0YhRe_azDuGwLnRjnCO4D_oH5MuahRBqMjn_W",
+        "AUTH0_AUDIENCE": "https://api.fabtrakr.com",
+        "AUTH0_TOKEN_ENDPOINT": "https://dev-q9u-izlr.auth0.com/oauth/token",
+        "AUTH0_USER_LOGIN_ENDPOINT": "https://dev-q9u-izlr.auth0.com/oauth/token"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "API_BASE_URL": "https://api.fabtrakr.com",
+        "AUTH0_CLIENT_ID": "j4jY7eXPLnSi6Ndt2sAGNUiUy0X4vocE",
+        "AUTH0_CLIENT_SECRET": "UOL5-fDLRjhpUICId3Jefvc-EVB0YhRe_azDuGwLnRjnCO4D_oH5MuahRBqMjn_W",
+        "AUTH0_AUDIENCE": "https://api.fabtrakr.com",
+        "AUTH0_TOKEN_ENDPOINT": "https://dev-q9u-izlr.auth0.com/oauth/token",
+        "AUTH0_USER_LOGIN_ENDPOINT": "https://dev-q9u-izlr.auth0.com/oauth/token"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "apk"
+      },
+      "autoIncrement": true,
+      "env": {
+        "API_BASE_URL": "https://api.fabtrakr.com",
+        "AUTH0_CLIENT_ID": "j4jY7eXPLnSi6Ndt2sAGNUiUy0X4vocE",
+        "AUTH0_CLIENT_SECRET": "UOL5-fDLRjhpUICId3Jefvc-EVB0YhRe_azDuGwLnRjnCO4D_oH5MuahRBqMjn_W",
+        "AUTH0_AUDIENCE": "https://api.fabtrakr.com",
+        "AUTH0_TOKEN_ENDPOINT": "https://dev-q9u-izlr.auth0.com/oauth/token",
+        "AUTH0_USER_LOGIN_ENDPOINT": "https://dev-q9u-izlr.auth0.com/oauth/token"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
