@@ -43,9 +43,10 @@ const getType = (b) => {
 // ─── Parsers — mirrors Java EntryPresenter.postPallet ────────────────────────
 
 const parseArticle = (b) => {
-  const raw = b.substring(3, 11);
-  const idx = b.indexOf(SUPPLIER_CONCAT);
-  const pieces = idx !== -1 ? parseInt(b.substring(idx + SUPPLIER_CONCAT.length), 10) || 0 : 0;
+  const s = b.replace(/[^A-Za-z0-9]/g, '');  // strip brackets — mirrors Java dispatchKeyEvent cleaning
+  const raw = s.substring(3, 11);
+  const idx = s.indexOf(SUPPLIER_CONCAT);
+  const pieces = idx !== -1 ? parseInt(s.substring(idx + SUPPLIER_CONCAT.length), 10) || 0 : 0;
   const fmt = `${raw.substring(0, 3)}.${raw.substring(3, 6)}.${raw.substring(raw.length - 2)}`;
   return { raw, fmt, pieces };
 };

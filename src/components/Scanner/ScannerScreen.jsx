@@ -189,9 +189,17 @@ const ScannerScreen = forwardRef(({
   /* ---------- external scanner handler ---------- */
   const handleExternalSubmit = () => {
     // Read from ref — guaranteed to have the full barcode regardless of render state
-    const clean = externalInputRef.current.trim().replace(/[\r\n]/g, '');
+    // Mirror Java dispatchKeyEvent: replaceAll("[^A-Za-z0-9!#$%&(){|}~:;<=>?@*+,./^_`\'\" \t\r\n\f-]","")
+    const clean = externalInputRef.current
+      .replace(/[^A-Za-z0-9!#$%&(){|}~:;<=>?@*+,./^_`'" \t\r\n\f-]/g, '')
+      .replace(/[\r\n]/g, '')
+      .trim();
     if (!clean || scanned || isLoading) return;
-    if (isDuplicate(clean)) return;
+    if (isDuplicate(clean)) {
+      setExternalInput('');
+      externalInputRef.current = '';
+      return;
+    }
 
     setScanned(true);
     setIsLoading(true);
