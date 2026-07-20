@@ -129,6 +129,16 @@ class AuthService {
         };
     };
 
+    setUserToken(token) {
+        if (token) {
+            this.token = token;
+            this.tokenExpiry = new Date(Date.now() + 86400 * 1000); // treat as 24h valid
+        } else {
+            this.token = null;
+            this.tokenExpiry = null;
+        }
+    }
+
     async request(method, endpoint, body) {
         const makeRequest = async (token) => {
             const response = await axios({

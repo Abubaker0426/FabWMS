@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/My/icon.png",
-    "scheme": "fabwms",
+    "scheme": "xyza",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true
@@ -16,7 +16,16 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": false,
-      "package": "com.abubaker_siddiq.Fabwms"
+      "package": "com.fabwms",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "category": ["DEFAULT", "BROWSABLE"],
+          "data": {
+            "scheme": "xyza"
+          }
+        }
+      ]
     },
     "plugins": [
       [
