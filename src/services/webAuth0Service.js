@@ -3,10 +3,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 WebBrowser.maybeCompleteAuthSession();
 
-const AUTH0_DOMAIN    = 'dev-q9u-izlr.auth0.com';
+const AUTH0_DOMAIN = 'dev-q9u-izlr.auth0.com';
 const AUTH0_CLIENT_ID = 'E1IyVTsEqMu5b75JKNKWwbDEr7w0dgsR';
-const AUTH0_AUDIENCE  = 'https://api.fabtrakr.com';
-const AUTH0_SCOPE     = 'openid profile email offline_access read:current_user update:current_user_metadata';
+const AUTH0_AUDIENCE = 'https://api.fabtrakr.com';
+const AUTH0_SCOPE = 'openid profile email offline_access read:current_user update:current_user_metadata';
 
 const PRODUCTION_REDIRECT = `xyza://${AUTH0_DOMAIN}/android/com.fabwms/callback`;
 
@@ -16,7 +16,7 @@ const getRedirectUri = () => {
   // expo-constants is not needed — just check if we're in Expo Go via the global
   if (typeof expo !== 'undefined' && expo?.modules?.ExpoGo) {
     // Running inside Expo Go
-    return `exp://192.168.5.58:8081/--/android/com.fabwms/callback`;
+    return `exp://192.168.5.57:8081/--/android/com.fabwms/callback`;
   }
   return PRODUCTION_REDIRECT;
 };

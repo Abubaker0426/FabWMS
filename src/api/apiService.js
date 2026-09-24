@@ -1,13 +1,3 @@
-/**
- * apiService.js — CLEANED (Phase 4)
- *
- * Changes from original:
- *   1. All console.log / console.error replaced with logger (silent in production)
- *   2. Consistent return: always return response (removed `response || response.data` ambiguity)
- *   3. Fixed typo in comments (Where house → Warehouse)
- *   4. Removed redundant try/catch logging — errors propagate to hooks which handle them
- */
-
 import authService from '../config/authConfig';
 import { logger } from '../utils/logger';
 

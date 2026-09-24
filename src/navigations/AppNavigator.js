@@ -17,6 +17,7 @@ import PalletRackEntry from '../screens/Racks/PalletRack/PalletRackEntry';
 import PalletRackExit  from '../screens/Racks/PalletRack/PalletRackExit';
 import PalletWHentry   from '../screens/Pallet/PalletWHentry';
 import PalletWHexit    from '../screens/Pallet/PalletWHexit';
+import PalletRobotic   from '../screens/Fabric/PalletRobotic';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,7 @@ export default function AppNavigator() {
         <Stack.Screen name="FabRackExit"     component={FabRackExit} />
         <Stack.Screen name="PalletDetails"   component={PalletDetails} />
         <Stack.Screen name="FabDetails"      component={FabDetails} />
+        <Stack.Screen name="PalletRobotic"   component={PalletRobotic} />
       </Stack.Navigator>
     </NavigationContainer>
   );

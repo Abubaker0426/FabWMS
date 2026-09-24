@@ -37,6 +37,8 @@ const FabricScreen = ({ navigation }) => {
         />
         <CustomButton BtnText="WAREHOUSE EXIT" onPress={() => navigation.navigate('FabWHexit')}
         />
+        <CustomButton BtnText="PALLET DETAILS" onPress={() => navigation.navigate('PalletRobotic')}
+        />
       </View>
     </ScrollView>
   )
