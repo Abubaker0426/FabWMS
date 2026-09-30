@@ -1,5 +1,10 @@
+import axios from 'axios';
 import authService from '../config/authConfig';
 import { logger } from '../utils/logger';
+
+// const ROBOTIC_BASE_URL = 'http://192.168.0.168:8000';
+const ROBOTIC_BASE_URL = 'http://192.168.0.168:8000';
+// http://192.168.0.168:8000
 
 // ─── Locations ────────────────────────────────────────────────────────────────
 
@@ -171,6 +176,36 @@ export const putFabricToRack = async (fabricBarcode) => {
     return response;
   } catch (error) {
     logger.error('[API] putFabricToRack:', error);
+    throw error;
+  }
+};
+
+
+
+// ─── Pallet details robotic  (POST) ──────────────────────────────────────────────────────────
+
+
+
+export const postPalletDetails = async (rackUid, rackBarcode) => {
+  const body = [{ racks_unique_id: rackUid, barcode: rackBarcode }];
+  console.log('[postPalletDetails] URL:', `${ROBOTIC_BASE_URL}/reload_confirmation`);
+  console.log('[postPalletDetails] Body:', JSON.stringify(body));
+  try {
+    const response = await axios.post(
+      `${ROBOTIC_BASE_URL}/reload_confirmation`,
+      body,
+      {
+        headers: { 'Content-Type': 'application/json' },
+        auth: { username: 'erp', password: 'erp123' },
+      }
+    );
+    console.log('[postPalletDetails] Response:', JSON.stringify(response.data));
+    logger.api('postPalletDetails', response.data);
+    return response.data;
+  } catch (error) {
+    console.log('[postPalletDetails] Error status:', error?.response?.status);
+    console.log('[postPalletDetails] Error data:', JSON.stringify(error?.response?.data));
+    logger.error('[API] postPalletDetails:', error);
     throw error;
   }
 };
